@@ -1,0 +1,11 @@
+:host {
+    margin: 2 rem;
+    max-height: 20rem;
+    cursor: pointer;
+}
+
+.card  :hover{
+    -webkit-box-shadow: 10px 10px 5px 0px blue;
+    -moz-box-shadow: 10px 10px 5px 0px blue;
+    box-shadow: 10px 10px 5px 0px blue;
+}

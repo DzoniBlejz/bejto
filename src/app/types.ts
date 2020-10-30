@@ -1,3 +1,7 @@
+export interface SearchResponseWeather{
+    
+}
+
 export interface User {
     id: number;
     name : string;
@@ -5,9 +9,35 @@ export interface User {
     email : string;
 }
 export interface LoginDto{
+    name: string;
     email: string;
     password : string;
 }
+
+export interface UserReg{
+
+    name: string;
+    password: string;
+    email:string;
+}
+
+export interface RegisterDto {
+    email: string;
+    password: string;
+    name: string;
+}
+
+export interface Movie{
+    Search: Movie[]
+    Title : string;
+    year: string;
+    Poster: string;
+    release: string;
+    imdbID: string;
+    type: string;
+}
+
+export const USERSreg : UserReg[] = []
 
 export const USERS : User[] = [
     {

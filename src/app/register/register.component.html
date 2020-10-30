@@ -1,0 +1,23 @@
+
+    <nav>     
+    <mat-card>
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="regData.name">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="regData.email">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]="regData.password">
+        </mat-form-field>
+        <br class="dizesme">
+        <button  mat-button color ="primary" (click)= "onRegister()">Register</button> 
+        <br>
+        <br>
+        <mat-checkbox class ="example-margin">I am not a robot</mat-checkbox>
+    </mat-card>
+</nav>

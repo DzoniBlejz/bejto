@@ -1,0 +1,8 @@
+<mat-card>
+    <mat-card-title>
+        {{movie.Title}}
+    </mat-card-title>
+    <div>
+        <img (click)="selectMovie()" [src]="movie.Poster" />
+    </div>
+</mat-card>

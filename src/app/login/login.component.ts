@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServiceService } from '../service.service';
-import { LoginDto } from '../types';
+import { LoginDto, RegisterDto } from '../types';
 
 
 
@@ -11,14 +12,24 @@ import { LoginDto } from '../types';
 })
 export class LoginComponent  {
   loginData = {name: '', email: '', password: ''} as LoginDto;
+  showReg = false;
 
-  constructor(private userService: ServiceService) { }
+  constructor(private userService: ServiceService, private router: Router) { }
 
   
+  onLogin(): void {
+    this.userService.login(this.loginData).subscribe(user =>{
+      if(user){
+        this.router.navigate(['home'])
+      }
+      else {
+        alert("pogresni podaci batooooooooooooooooooooo");
+            }
+    })
 
-  onLogin() {
-    // console.log(this.loginData.email);
-    // console.log(this.loginData.password);
   }
+  onRegister(): void {
+      this.showReg = !this.showReg;
+    }
 
 }

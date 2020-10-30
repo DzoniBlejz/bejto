@@ -50,15 +50,30 @@ import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MovieComponent } from './movie/movie.component';
+import { SearchComponent } from './search/search.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { WeatherComponent } from './weather/weather.component';
 
 
 @NgModule({
   declarations:[
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    MovieComponent,
+    SearchComponent,
+    MovieDetailComponent,
+    WeatherComponent,
+    
   ], 
   imports : [
     A11yModule,
+    HttpClientModule,
     ClipboardModule,
     CdkStepperModule,
     CdkTableModule,
