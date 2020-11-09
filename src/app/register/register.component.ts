@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
-
-import { RegisterDto } from '../types';
+import { Pol, RegisterDto } from '../types';
 
 @Component({
   selector: 'app-register',
@@ -9,8 +8,9 @@ import { RegisterDto } from '../types';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  regData = { name: '' , email:  '', password: ''} as RegisterDto;
- 
+  regData = { name: '' , email:  '', password: '',pol:undefined} as RegisterDto;
+  polovi:Pol;
+  @ Input()isAdminPage = false;
 
   constructor(private userService: ServiceService) { }
 
@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegister(): void {
-    this.userService.register(this.regData);
+    this.userService.isRegister(this.regData, this.isAdminPage);
+    console.log(this.regData.pol);
   }
 }

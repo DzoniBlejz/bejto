@@ -1,0 +1,22 @@
+<table>
+    <tr>
+        <th>
+            Ime:
+        </th>
+        <th>
+            Prezime:
+        </th>
+        <th>
+            Email:
+        </th>
+        <th>
+            Role:
+        </th>
+    </tr>
+    <tr *ngFor="let korisnik of korisniciServis.usersDb">
+        <td>{{korisnik.name}}</td>
+        <td>{{korisnik.email}}</td>
+        <td>{{korisnik.role}}</td>
+        <td>{{korisnik.password}}</td>
+    </tr>
+</table>

@@ -6,6 +6,20 @@
     bottom: 0;
     left: 0;
     right: 0;
+    
+  }
+
+  .inline {
+    display: inline;
+  }
+  .icon{
+    cursor: pointer;
+  }
+  .user{
+    margin-right: 2rem;
+  }
+  .example-toolbar {
+    justify-content: space-between;
   }
   
   .example-is-mobile .example-toolbar {
@@ -13,18 +27,19 @@
     z-index: 2;
 
   }
+
   
   h1.example-app-name {
     margin-left: 8px;
   }
-
- 
-
-  .toolbar-elements{
-    justify-content: space-between;
-    display: flex;
-  }
   
+  mat-form-field {
+    min-width: 30rem;
+  }
+  .toolbar-elements {
+      display: flex;
+      justify-content: space-between;
+  }
   .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
@@ -36,4 +51,3 @@
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
   }
-  

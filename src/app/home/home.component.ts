@@ -1,9 +1,8 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../movies.service';
 import { ServiceService } from '../service.service';
-import { Movie, User } from '../types';
+import { Role, User } from '../types';
 
 @Component({
   selector: 'app-home',
@@ -12,16 +11,17 @@ import { Movie, User } from '../types';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  mobileQuery : MediaQueryList;
+  mobileQuery: MediaQueryList;
   title = 'Movies';
-  user : User;
+  user: User;
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, 
-    media: MediaMatcher, 
+
+  constructor(changeDetectorRef: ChangeDetectorRef,
+    media: MediaMatcher,
     private userService: ServiceService,
-    private movieService: MoviesService) {
+  ) {
 
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -30,9 +30,18 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.user = this.userService.loggedUser;
   }
-
+  isAdmin() {
+    if (this.userService.loggedUser.role === Role.Admin)
+    {
+      return true;
+    }
+    return false;
+    
+  }
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-
+  logout() {
+    this.userService.Logout();
+  }
 }

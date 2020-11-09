@@ -7,7 +7,22 @@ export interface User {
     name : string;
     password : string;
     email : string;
+    role?: Role;
+    pol:Pol;
 }
+
+export enum Pol {
+    Musko  = 'musko',
+    Zensko = 'zensko',
+    SamoNek = "samo nek je normalno"
+}
+
+export enum Role {
+
+    Admin = 'Administrator',
+    User = 'User'
+}
+
 export interface LoginDto{
     name: string;
     email: string;
@@ -25,6 +40,7 @@ export interface RegisterDto {
     email: string;
     password: string;
     name: string;
+    pol:Pol;
 }
 
 export interface Movie{
@@ -44,13 +60,16 @@ export const USERS : User[] = [
         id: 1,
         name: 'Dzoni',
         password : 'dzoni',
-        email: 'dzoni@gmail.com'
+        email: 'dzoni@gmail.com',
+        role: Role.Admin,
+        pol:Pol.Musko
     },
     {
         id: 2,
         name: 'Jaksa',
         password : 'jaksa',
-        email: 'jaksa@gmail.com'
+        email: 'jaksa@gmail.com',
+        pol:Pol.Musko
     }
 
 ]

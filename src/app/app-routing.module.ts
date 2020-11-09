@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminComponent } from './admin/admin.component';
 import { HomeGuardGuard } from './guards/home-guard.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { SearchComponent } from './search/search.component';
+import { UsersComponent } from './users/users.component';
 import { WeatherComponent } from './weather/weather.component';
 
 const routes: Routes = [
@@ -30,9 +32,21 @@ const routes: Routes = [
       {
         path: 'detail/:id',
         component: MovieDetailComponent
+      },
+      {
+        path: 'admin',
+        component: AdminComponent
+      },
+      {
+        path: 'users',
+        component: UsersComponent
       }
+
     ]
+
   },
+
+
   {
     path: '',
     redirectTo: 'home',

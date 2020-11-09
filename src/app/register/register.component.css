@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     margin-top: 10%;
+    background-color: aquamarine;
 }
 
 .container {
@@ -12,3 +13,4 @@
 mat-form-field{
     width: 100% !important;
 }
+
